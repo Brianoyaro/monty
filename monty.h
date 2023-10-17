@@ -38,8 +38,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct global
+{
+	FILE *fd;
+	char *buff;
+	char *push_val;
+} global;
+extern global globy;
+
 int fxn(stack_t **head, char *token, unsigned int line_number);
-void push(stack_t **head, unsigned int line_number, char *tkn);
+void push(stack_t **head, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);

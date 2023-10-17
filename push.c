@@ -1,5 +1,5 @@
 #include "monty.h"
-void push(stack_t **head, unsigned int line_number, char *tkn)
+void push(stack_t **head, unsigned int line_number)
 {
 	stack_t *new;
 	int value;
@@ -10,7 +10,7 @@ void push(stack_t **head, unsigned int line_number, char *tkn)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	value = atoi(tkn);
+	value = atoi(globy.push_val);
 	if (!value)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
