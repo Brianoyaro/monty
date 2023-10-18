@@ -1,10 +1,11 @@
 #include "monty.h"
+global globy;
 int main(int argc, char **argv)
 {
 	int fd1;
 	unsigned int line_number = 0;
 	ssize_t n = 0;
-	char *token, *buff;
+	char *token = NULL, *buff = NULL;
 	stack_t *head = NULL;
 
 	if (argc != 2)
@@ -33,19 +34,20 @@ int main(int argc, char **argv)
 		close(fd1);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buff, "\n");
+	token = strtok(buff, " \t\n");
 	while (token)
 	{
 		line_number += 1;
 		if (token != NULL && token[0] != '#')
 		{
-			fxn(&head, token, line_number);/*the fxn will free the linked list*/
-			token = strtok(NULL, "\n");
-			printf("token-> %s\n", token);
+			if (strcmp(token, "push") == 0)
+				globy.push_val = strtok(NULL, " \t\n");
+			printf("tk->%s. globy.push_val->%s\n", token, globy.push_val);
+			fxn(&head, token, line_number);
+			token = strtok(NULL, " \t\n");
 			continue;
 		}
-		token = strtok(NULL, "\n");
-		printf("vampire token->%s\n", token);
+		/*token = strtok(NULL, "\n");*/
 
 	}
 	close(fd1);

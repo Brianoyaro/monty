@@ -2,7 +2,7 @@
 int fxn(stack_t **head, char *token, unsigned int line_number)
 {
 	instruction_t instructions[] = {
-		{"ppush", push},
+		{"push", push},
 		{"pop", pop},
 		{"pall", pall},
 		{"pint", pint},

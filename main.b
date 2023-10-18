@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 global globy;
 int main(int argc, char **argv)
@@ -6,19 +7,20 @@ int main(int argc, char **argv)
 	char *line;
 	int line_no = 1;
 	size_t n = 0;
+	FILE *stream;
 
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	globy.fd = fopen(argv[1], "r");
+	stream = fopen(argv[1], "r");
 	if (globy.fd == NULL)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line, &n, globy.fd) != -1)
+	while (getline(&line, &n, stream) != -1)
 	{
 		globy.buff = strtok(line, "\n\t ");
 		globy.push_val = strtok(NULL, "\n\t ");
