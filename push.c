@@ -11,7 +11,6 @@ void push(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(globy.push_val);
-	printf("About to push %d\n", value);
 	if (!value)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
