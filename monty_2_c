@@ -9,7 +9,7 @@
  * @line_number: The line number.
  * @value: The value to push.
  */
-void push(stack_t **stack,__attribute__((unused)) unsigned int line_number, int value)
+void push(stack_t **stack, unsigned int line_number, int value)
 {
     stack_t *new_node = malloc(sizeof(stack_t));
     if (!new_node)
@@ -105,6 +105,80 @@ void add(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
     (*stack)->next->n += (*stack)->n;
+    pop(stack, line_number);
+}
+
+/**
+ * Function to subtract the top element from the second top element of the stack.
+ * @stack: The stack.
+ * @line_number: The line number.
+ */
+void sub(stack_t **stack, unsigned int line_number)
+{
+    if (!stack || !*stack || !(*stack)->next)
+    {
+        fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    (*stack)->next->n -= (*stack)->n;
+    pop(stack, line_number);
+}
+
+/**
+ * Function to divide the second top element by the top element of the stack.
+ * @stack: The stack.
+ * @line_number: The line number.
+ */
+void div_op(stack_t **stack, unsigned int line_number)
+{
+    if (!stack || !*stack || !(*stack)->next)
+    {
+        fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    if ((*stack)->n == 0)
+    {
+        fprintf(stderr, "L%u: division by zero\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    (*stack)->next->n /= (*stack)->n;
+    pop(stack, line_number);
+}
+
+/**
+ * Function to multiply the top two elements of the stack.
+ * @stack: The stack.
+ * @line_number: The line number.
+ */
+void mul(stack_t **stack, unsigned int line_number)
+{
+    if (!stack || !*stack || !(*stack)->next)
+    {
+        fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    (*stack)->next->n *= (*stack)->n;
+    pop(stack, line_number);
+}
+
+/**
+ * Function to compute the remainder of the division.
+ * @stack: The stack.
+ * @line_number: The line number.
+ */
+void mod(stack_t **stack, unsigned int line_number)
+{
+    if (!stack || !*stack || !(*stack)->next)
+    {
+        fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    if ((*stack)->n == 0)
+    {
+        fprintf(stderr, "L%u: division by zero\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+    (*stack)->next->n %= (*stack)->n;
     pop(stack, line_number);
 }
 
