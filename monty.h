@@ -45,7 +45,6 @@ typedef struct global
 	char *push_val;
 } global;
 extern global globy;
-
 int fxn(stack_t **head, char *token, unsigned int line_number);
 void push(stack_t **head, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
