@@ -1,33 +1,27 @@
 #include "monty.h"
-void push(stack_t **head, unsigned int line_number)
+void push(stack_t **head, unsigned int line_no)
 {
 	stack_t *new;
-	int value;
+	int val;
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		printf("Error: malloc failed\n");
+		free(globe.buffer);
 		exit(EXIT_FAILURE);
 	}
-	value = atoi(globy.push_val);
-	if (!value)
+	if (globe.push_val == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		printf("L%d: usage: push integer\n", line_no);
+		free(globe.buffer);
 		exit(EXIT_FAILURE);
 	}
-	new->n = value;
-	if (*head == NULL)
-	{
-		new->prev = NULL;
-		new->next = NULL;
-		*head = new;
-	}
-	else
-	{
-		new->next = *head;
-		new->prev = (*head)->prev;
+	val = atoi(globe.push_val);
+	new->n = val;
+	new->next = *head;
+	new->prev = NULL;
+	if (*head != NULL)
 		(*head)->prev = new;
-		*head = new;
-	}
+	*head = new;
 }

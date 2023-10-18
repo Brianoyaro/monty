@@ -1,17 +1,21 @@
 #include "monty.h"
-void pop(stack_t **head, unsigned int line_number)
+void pop(stack_t **head, unsigned int line_no)
 {
-	stack_t *temp;
-	/*int  value;*/
+	stack_t *prev;
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		printf("L%d: can't pop an empty stack\n", line_no);
+		free(globe.buffer);
 		exit(EXIT_FAILURE);
 	}
-	temp = *head;
-	*head = temp->next;
-	/*value = temp->n;*/
-	free(temp);
-	/*return (value);*/
+	prev = *head;
+	if (prev == NULL)
+		*head = NULL;
+	if (*head != NULL)
+	{
+		(*head)->prev = NULL;
+		*head = (*head)->next;
+	}
+	free(prev);
 }

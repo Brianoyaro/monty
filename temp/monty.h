@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,23 +40,15 @@ typedef struct instruction_s
 
 typedef struct global
 {
-	FILE *stream;
-	char *buffer;
+	FILE *fd;
+	char *buff;
 	char *push_val;
 } global;
-extern global globe;
-void function_find(stack_t **head, char *token, unsigned int line_no);
-void push(stack_t **head, unsigned int line_no);
-void pop(stack_t **head, unsigned int line_no);
-void pall(stack_t **head, __attribute__((unused))unsigned int line_no);
-void pint(stack_t **head, unsigned int line_no);
-void nop(__attribute__((unused))stack_t **head, __attribute__((unused))unsigned int line_no);
-void swap(stack_t **head, unsigned int line_no);
-int total_nodes(stack_t **head);
-void add(stack_t **head, unsigned int line_no);
-void sub(stack_t **head, unsigned int line_no);
-void div(stack_t **head, unsigned int line_no);
-void mod(stack_t **head, unsigned int line_no);
-
+extern global globy;
+int fxn(stack_t **head, char *token, unsigned int line_number);
+void push(stack_t **head, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
+void pall(stack_t **head, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
 
 #endif
