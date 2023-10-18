@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * div_op - divides two nodes
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void div_op(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;

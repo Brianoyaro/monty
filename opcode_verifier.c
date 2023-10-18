@@ -1,4 +1,11 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * opcode_verifier - verifies opcode
+ * @opcode: first parameter per line
+ * @head: head node
+ * @line_count: line being executed
+ * Return: Nothing
+ */
 void opcode_verifier(char *opcode, stack_t **head, unsigned int line_count)
 {
 	instruction_t cmd[] = {

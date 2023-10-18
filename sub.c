@@ -1,4 +1,11 @@
-#include "main.h"
+#include "monty.h"
+
+/**
+ * sub - subtracts two nodes
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;

@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * pop - removes top node
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void pop(stack_t **head, unsigned  int line_number)
 {
 	stack_t *temp;

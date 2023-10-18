@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * mod - mods two nodes
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void mod(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;

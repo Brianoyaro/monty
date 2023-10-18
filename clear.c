@@ -1,4 +1,9 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * clear - deletes list
+ * @head: head node
+ * Return: Nothing
+ */
 void clear(stack_t **head)
 {
 	stack_t *curr;

@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * pint - prints top node value
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void pint(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL)

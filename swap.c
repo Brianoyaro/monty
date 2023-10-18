@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * swap - swaps two nodes
+ * @head: head node
+ * @line_number: line being executed
+ * Return: Nothing
+ */
 void swap(stack_t **head, unsigned int line_number)
 {
 	int temp;

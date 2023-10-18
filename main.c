@@ -1,4 +1,10 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * main - entry point of program
+ * @argc: argument count
+ * @argc: argument vector
+ * Return: 0 on success
+ */
 int main(int argc, char **argv)
 {
 	char *line, *opcode;
@@ -20,7 +26,7 @@ int main(int argc, char **argv)
 	line = malloc(sizeof(char) * 100000);
 	if (line == NULL)
 	{
-		fprintf(stderr, "Malloc\n");/*correct error message*/
+		fprintf(stderr, "Error: malloc failed\n");/*correct error message*/
 		exit(EXIT_FAILURE);
 	}
 	while(fgets(line, 100000, file) != NULL)
@@ -40,6 +46,5 @@ int main(int argc, char **argv)
 	}
 	fclose(file);
 	clear(&head);
-	/*write function to clear up the stack*/
 	return (0);
 }

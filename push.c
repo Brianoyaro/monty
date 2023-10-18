@@ -1,4 +1,11 @@
-#include "main.h"
+#include "monty.h"
+/**
+ * push - add a new noder
+ * @head: head node
+ * @line_number: line being executed
+ * @value: second line parameter
+ * Return: Nothing
+ */
 void push(stack_t **head, unsigned int line_number, char *value)
 {
 	stack_t *new;
@@ -11,7 +18,7 @@ void push(stack_t **head, unsigned int line_number, char *value)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (value == NULL)
+	if (value == NULL)/*check if its a number because atoi returns 0 if not*/
 	{
 		fprintf(stderr, "Error: USAGE push number\n");/*fix this error message*/
 		exit(EXIT_FAILURE);
