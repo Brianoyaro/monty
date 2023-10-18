@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		opcode = strtok(globe.buffer, " \t\n");
 		if (strcmp(opcode, "push") == 0)
 			globe.push_val = strtok(NULL, " \t\n");
-		function_find(&head, opcode, line_no);
+		f_function_find(&head, opcode, line_no);
 		line_no += 1;
 	}
 	free(globe.buffer);

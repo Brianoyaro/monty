@@ -1,5 +1,5 @@
 #include "monty.h"
-void pop(stack_t **head, unsigned int line_no)
+void f_pop(stack_t **head, unsigned int line_no)
 {
 	stack_t *prev;
 

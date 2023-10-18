@@ -1,17 +1,17 @@
 #include "monty.h"
-void function_find(stack_t **head, char *token, unsigned int line_no)
+void f_function_find(stack_t **head, char *token, unsigned int line_no)
 {
 	instruction_t array[] = {
-		{"push", push},
-		{"pop", pop},
-		{"pall", pall},
-		{"pint", pint},
-		{"nop", nop},
-		{"swap", swap},
-		{"add", add},
-		{"sub", sub},
-		{"div", div},
-		{"mod", mod},
+		{"push", f_push},
+		{"pop", f_pop},
+		{"pall", f_pall},
+		{"pint", f_pint},
+		{"nop", f_nop},
+		{"swap", f_swap},
+		{"add", f_add},
+		{"sub", f_sub},
+		{"div", f_div},
+		{"mod", f_mod},
 		{NULL, NULL}
 	};
 	int i = 0, flag = 0;

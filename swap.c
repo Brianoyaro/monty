@@ -1,5 +1,5 @@
 #include "monty.h"
-void swap(stack_t **head, unsigned int line_no)
+void f_swap(stack_t **head, unsigned int line_no)
 {
 	int number, temp;
 

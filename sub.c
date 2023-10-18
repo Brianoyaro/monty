@@ -1,5 +1,5 @@
 #include "monty.h"
-void sub(stack_t **head, unsigned int line_no)
+void f_sub(stack_t **head, unsigned int line_no)
 {
 	int number;
 	stack_t *temp = *head;
@@ -14,6 +14,6 @@ void sub(stack_t **head, unsigned int line_no)
 	(*head)->next->n -= (*head)->n;
 	*head = temp->next;
 	if (*head != NULL)
-		(*head)->prev = NULL:
+		(*head)->prev = NULL;
 	free(temp);
 }

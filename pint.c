@@ -1,5 +1,5 @@
 #include "monty.h"
-void pint(stack_t **head, unsigned int line_no)
+void f_pint(stack_t **head, unsigned int line_no)
 {
 	if (*head == NULL)
 	{

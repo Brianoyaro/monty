@@ -1,5 +1,5 @@
 #include "monty.h"
-void pall(stack_t **head, __attribute__((unused))unsigned int line_no)
+void f_pall(stack_t **head, __attribute__((unused))unsigned int line_no)
 {
 	stack_t *curr;
 
