@@ -44,5 +44,7 @@ void nop(stack_t **head, unsigned int line_number);
 void opcode_verifier(char *opcode, stack_t **head, unsigned int line_count);
 void push(stack_t **head, unsigned int line_number, char *value);
 void clear(stack_t **head);
+int number_(char *s);
+void rot1(stack_t **head, unsigned int line_number);
 
 #endif

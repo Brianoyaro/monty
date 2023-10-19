@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 				opcode_verifier(opcode, &head, line_number);
 		}
 	}
+	free(line);
 	fclose(file);
 	clear(&head);
 	return (0);

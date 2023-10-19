@@ -19,6 +19,7 @@ void opcode_verifier(char *opcode, stack_t **head, unsigned int line_count)
 		{"div", div_op},
 		{"mod", mod},
 		{"sub", sub},
+		{"rot1", rot1},
 		{NULL, NULL}
 	};
 	int flag = 0, i = 0;

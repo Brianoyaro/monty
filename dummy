@@ -3,7 +3,9 @@ push 2
 push 3
 push 13
 push 0
+pall prints all datum values !!!
+rot1
 pall
-push e
+push 8e
 pall
 push 12

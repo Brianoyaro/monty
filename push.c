@@ -18,7 +18,7 @@ void push(stack_t **head, unsigned int line_number, char *value)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (value == NULL)/*check if its a number because atoi returns 0 if not*/
+	if (value == NULL || (number_(value) == 5))/*check if its a number because atoi returns 0 if not*/
 	{
 		fprintf(stderr, "Error: USAGE push number\n");/*fix this error message*/
 		exit(EXIT_FAILURE);
@@ -30,4 +30,26 @@ void push(stack_t **head, unsigned int line_number, char *value)
 	if (*head != NULL)
 		(*head)->prev = new;
 	*head = new;
+}
+/**
+ * number_ - checks if a string is made of numbers
+ * @s: string to check
+ * Return: 5 if string has any non-number character
+ * else 10 if made of numbers entirely
+ */
+int number_(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			i += 1;
+			continue;
+		}
+		else
+			return (5);
+	}
+	return (10);
 }
